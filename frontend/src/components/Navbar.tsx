@@ -111,7 +111,7 @@ const Navbar: React.FC = (): JSX.Element => {
 
             {isAuthenticated && isElvis && (
                 <li className="navbarItem">
-                  <Link to="/kyrushoAdmin" onClick={() => setMenuOpen(false)}>{t("navbar.adminDashboard")}</Link>
+                  <Link to="/Admin" onClick={() => setMenuOpen(false)}>{t("navbar.adminDashboard")}</Link>
                 </li>
             )}
 
