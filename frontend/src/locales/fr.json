@@ -1,0 +1,107 @@
+{
+    "welcomePage": {
+      "greeting": "Salut, je suis Elvis Ruberwa",
+      "bioSection": {
+        "bioTitle": "À Propos De Moi",
+        "bioDescription": "Je suis un étudiant en troisième année d'informatique au Collège Champlain, spécialisé en développement full stack, en TI et en cybersécurité. Je suis passionné par le travail en équipe, une compétence que j'ai développée en jouant au basketball et en travaillant sur plusieurs projets de groupe. Je suis ambitieux en ce qui concerne mon développement personnel et j'accorde une grande importance à l'intégrité, en veillant toujours à ce que mon travail soit réalisé avec soin et responsabilité."
+      },
+      "skills": {
+        "title": "Compétences",
+        "java": "Java",
+        "python": "Python",
+        "csharp": "C#",
+        "git": "Git",
+        "react": "React",
+        "databases": "Bases de données"
+      },
+      "languages": {
+        "title": "Langues",
+        "english": "Anglais",
+        "french": "Français",
+        "spanish": "Espagnol"
+      },
+      "projects": "Mes Projets"
+    },
+    "navbar": {
+      "home": "Accueil",
+      "bio": "BIO",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "comments": "Commentaires",
+      "adminDashboard": "Tableau de bord Admin",
+      "login": "Connexion",
+      "logout": "Déconnexion",
+      "redirecting": "Redirection..."
+    },
+  "footer": {
+    "about": {
+      "title": "À propos",
+      "description": "Bienvenue sur mon portfolio ! Cette application monolithique full-stack est construite avec Spring Boot et Java en backend, React avec TypeScript en frontend, MongoDB comme base de données, Docker pour le conteneur, Auth0 pour l'authentification et DigitalOcean pour le déploiement. J'espère que vous avez apprécié l'explorer et que vous en avez appris un peu sur moi !"
+    },
+    "contact": {
+      "title": "Contactez-moi",
+      "description": "Si vous avez des questions ou des commentaires, n'hésitez pas à me contacter.",
+      "email": "Envoyez-moi un e-mail"
+    },
+    "leaveComment": {
+      "button": "Laisser un commentaire",
+      "close": "Fermer",
+      "namePlaceholder": "Votre nom",
+      "commentPlaceholder": "Votre commentaire",
+      "error": "Veuillez entrer votre nom et votre commentaire.",
+      "submitSuccess": "Votre commentaire a été soumis avec succès !",
+      "submitError": "Erreur lors de la soumission du commentaire. Veuillez réessayer.",
+      "submitting": "Envoi en cours..."
+    },
+    "follow": {
+      "title": "Suivez-moi",
+      "description": "Restez connecté avec moi sur les réseaux sociaux :"
+    },
+    "resume": {
+      "title": "Téléchargez mon CV",
+      "english": "ANGLAIS",
+      "french": "FRANÇAIS"
+    },
+    "rightsReserved": "Tous droits réservés."
+  },
+
+    
+        "addNewProject": "Ajouter un nouveau projet",
+        "projectName": "Nom du projet",
+        "iconUrl": "URL de l'icône",
+        "gitRepo": "Dépôt Git",
+        "skills": "Compétences",
+        "addProject": "Ajouter le projet",
+        "projectAddedSuccessfully": "Projet ajouté avec succès!",
+        "failedToAddProject": "Échec de l'ajout du projet.",
+        "selectSkills": "Sélectionnez des compétences en cliquant sur les logos",
+
+        "adminDashboard": "Tableau de bord Admin",
+  "commentApproved": "Commentaire approuvé!",
+  "commentDeleted": "Commentaire supprimé!",
+  "accessDenied": "Accès refusé.",
+  "noPendingComments": "Aucun commentaire en attente.",
+  "submittedOn": "Soumis le",
+  "comments": "Commentaires",
+  "leaveAComment": "Laisser un commentaire",
+  "close": "Fermer",
+  "yourName": "Votre nom",
+  "yourComment": "Votre commentaire",
+  "leaveComment": "Laisser un commentaire",
+  "submitting": "En soumission...",
+  "commentSubmitted": "Commentaire soumis avec succès! En attente d'approbation.",
+  "errorSubmittingComment": "Une erreur est survenue lors de la soumission de votre commentaire.",
+  "noCommentsAvailable": "Aucun commentaire disponible.",
+  "pleaseFillInFields": "Veuillez remplir à la fois l'auteur et le contenu.",
+  "loadingProjects": "Chargement des projets...",
+  "add": "Ajouter",
+  "update": "Mettre à jour",
+  "noProjectsAvailable": "Aucun projet disponible",
+  "updateProject": "Mettre à jour le projet",
+  "projectIdMissing": "L'ID du projet est manquant.",
+  "projectUpdatedSuccess": "Le projet a été mis à jour avec succès!",
+  "projectUpdateFailed": "Échec de la mise à jour du projet.",
+  "updateProjectButton": "Mettre à jour le projet"
+      
+  }
+  

@@ -1,0 +1,172 @@
+.welcomePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8f8f8, #d4edda);
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.welcomeText h1 {
+    font-size: 4rem;
+    color: #333;
+    font-family: 'Source Code Pro', monospace;
+    position: relative;
+    font-weight: 700;
+    z-index: 2;
+    padding-top: 10%;
+}
+
+.matrixRain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.matrixColumn {
+    position: absolute;
+    top: -200px;
+    width: 10px;
+    font-size: 1rem;
+    color: rgba(0, 128, 128, 0.8);
+    animation: sparkle 4s infinite alternate ease-in-out;
+    animation-delay: calc(-4s * var(--delay));
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.aboutMeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photoWrapper {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profilePhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infoWrapper {
+    text-align: center;
+    max-width: 70%;
+    font-family: 'Arial', sans-serif;
+}
+
+.infoWrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+#skills-section {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#skills-section h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 2rem; /* Add spacing between the items */
+    justify-content: center; /* Center the grid */
+    padding: 2rem 0; /* Add some space around the container */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* Stack into 2 columns on smaller screens */
+    }
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;  /* Allow wrapping of the items */
+    justify-content: space-around;  /* Distribute the items evenly */
+    gap: 15px;  /* Add space between the skill items */
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.2);
+}
+
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* Reduced gap between language items */
+    padding-bottom: 3%; /* Reduced padding-bottom */
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.language-flag {
+    width: 4rem;
+    height: auto;
+    transition: transform 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.language-name {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    color: #333;
+}
+
+.language-item:hover .language-flag {
+    transform: scale(1.1);
+}

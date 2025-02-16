@@ -1,0 +1,99 @@
+/* Apply the gradient background to the body */
+body {
+  background: linear-gradient(180deg, #f8e9e9, #b3d0e1);
+  font-family: Arial, sans-serif;
+}
+
+/* Style the form container with a gradient background */
+.add-project-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: linear-gradient(180deg, #f8e9e9, #b3d0e1); /* Gradient applied here */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Heading */
+.add-project-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #5a6e75;  /* A cool grayish-blue color */
+}
+
+/* Style for form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #3b4c56;  /* Darker color for better contrast */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f8ff; /* Light background color for input boxes */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #e6f7ff; /* Slightly darker background on focus */
+}
+
+.skill-logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill-logo {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+}
+
+.skill-logo:hover {
+  border-color: #007bff;
+}
+
+.skill-logo.selected {
+  border-color: #28a745;
+}
+
+.button.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}

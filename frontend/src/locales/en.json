@@ -1,0 +1,121 @@
+{
+  "welcomePage": {
+    "greeting": "Hi, I'm Elvis Ruberwa",
+    "bioSection": {
+      "bioTitle": "About Me",
+      "bioDescription": "I’m a third-year Computer Science student at Champlain College, focused on full stack development, IT, and cybersecurity. I’m passionate about working in teams, which I’ve integrated through playing basketball and working in multiple group projects. I’m ambitious about personal growth and have strong integrity, always ensuring my work is done with care and accountability."
+    },
+    "skills": {
+      "title": "Skills",
+      "java": "Java",
+      "python": "Python",
+      "csharp": "C#",
+      "git": "Git",
+      "react": "React",
+      "databases": "Databases",
+      "azure": "Azure",
+      "bootstrap": "Bootstrap",
+      "docker": "Docker",
+      "html": "HTML",
+      "jira": "Jira",
+      "laravel": "Laravel",
+      "linux": "Linux",
+      "mariadb": "MariaDB",
+      "mongodb": "MongoDB",
+      "mysql": "MySQL",
+      "reactTypescript": "React/TypeScript",
+      "springBoot": "Spring Boot"
+    },
+    "languages": {
+      "title": "Languages",
+      "english": "English",
+      "french": "French",
+      "kinyarwanda": "Kinyarwanda",
+      "spanish": "Spanish"
+    },
+    "projects": "My Projects"
+  },
+    "navbar": {
+      "home": "Home",
+      "bio": "BIO",
+      "skills": "Skills",
+      "projects": "Projects",
+      "comments": "Comments",
+      "adminDashboard": "Admin Dashboard",
+      "login": "Login",
+      "logout": "Logout",
+      "redirecting": "Redirecting..."
+    },
+  "footer": {
+    "about": {
+      "title": "About",
+      "description": "Welcome to my portfolio! This full-stack monolithic application is built with Spring Boot and Java on the backend, React with TypeScript on the frontend, MongoDB as the database, Docker for the container, Auth0 for authentication, and DigitalOcean for deployment. I hope you enjoyed exploring it and got to learn a bit about me!"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "If you have any questions or feedback, feel free to reach out to me.",
+      "email": "Send me an email"
+    },
+    "leaveComment": {
+      "button": "Leave a Comment",
+      "close": "Close",
+      "namePlaceholder": "Your Name",
+      "commentPlaceholder": "Your Comment",
+      "error": "Please enter your name and comment.",
+      "submitSuccess": "Your comment has been submitted successfully!",
+      "submitError": "Error submitting comment. Please try again.",
+      "submitting": "Submitting..."
+    },
+    "follow": {
+      "title": "Follow Me",
+      "description": "Stay connected with me on social media:"
+    },
+    "resume": {
+      "title": "Download My Resume",
+      "english": "ENGLISH",
+      "french": "FRENCH"
+    },
+    "rightsReserved": "All rights reserved."
+  }
+,
+
+        "addNewProject": "Add New Project",
+        "projectName": "Project Name",
+        "iconUrl": "Icon URL",
+        "gitRepo": "Git Repository",
+        "skills": "Skills",
+        "addProject": "Add Project",
+        "projectAddedSuccessfully": "Project added successfully!",
+        "failedToAddProject": "Failed to add project.",
+        "selectSkills": "Select skills by clicking on logos",
+        "adminDashboard": "Admin Dashboard",
+  "commentApproved": "Comment approved!",
+  "commentDeleted": "Comment deleted!",
+  "accessDenied": "Access Denied.",
+  "noPendingComments": "No pending comments available.",
+  "submittedOn": "Submitted on",
+
+  "comments": "Comments",
+  "leaveAComment": "Leave a Comment",
+  "close": "Close",
+  "yourName": "Your Name",
+  "yourComment": "Your Comment",
+  "leaveComment": "Leave Comment",
+  "submitting": "Submitting...",
+  "commentSubmitted": "Comment submitted successfully! Awaiting approval.",
+  "errorSubmittingComment": "There was an error submitting your comment.",
+  "noCommentsAvailable": "No comments available.",
+  "pleaseFillInFields": "Please fill in both author and content.",
+  "loadingProjects": "Loading projects...",
+  "add": "Add",
+  "update": "Update",
+  "noProjectsAvailable": "No projects available",
+  "updateProject": "Update Project",
+  "projectIdMissing": "Project ID is missing.",
+  "projectUpdatedSuccess": "Project updated successfully!",
+  "projectUpdateFailed": "Failed to update project.",
+  "updateProjectButton": "Update Project"
+      
+      
+  }
+  

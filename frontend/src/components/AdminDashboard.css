@@ -1,0 +1,75 @@
+.adminDashboard {
+    min-height: 100vh; /* Makes sure it covers the full viewport height */
+    background: linear-gradient(180deg, #f8e9e9, #b3d0e1) no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+  .commentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .commentDate {
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  button {
+    padding: 5px 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  .commentsText h1 {
+    font-size: 4rem;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    color: #333; 
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-weight: 700; 
+    padding-top: 5%;
+    margin-bottom: 2rem;
+}
+  
+  .approveBtn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: 1px solid #28a745;
+  }
+  
+  .approveBtn:hover {
+    background-color: #218838; /* Darker green */
+  }
+  
+  .deleteBtn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: 1px solid #dc3545;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #c82333; /* Darker red */
+  }
+  
+  body {
+    background: linear-gradient(180deg, #f8e9e9, #b3d0e1) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+  

@@ -1,0 +1,117 @@
+/* Apply the gradient background to the body */
+body {
+  background: linear-gradient(180deg, #f8e9e9, #b3d0e1);
+  font-family: Arial, sans-serif;
+}
+
+/* Style the form container with a gradient background */
+.update-project-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #f8e9e9, #b3d0e1); /* Gradient applied here */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.update-project-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #5a6e75; /* A cool grayish-blue color */
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b4c56; /* Darker color for better contrast */
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f0f8ff; /* Light background color for input boxes */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  background-color: #e6f7ff; /* Slightly darker background on focus */
+}
+
+.form-group textarea {
+  resize: none;
+  height: 120px;
+}
+
+.button.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Skill logos container */
+.skill-logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.skill-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-logo:hover {
+  transform: scale(1.1);
+}
+
+.skill-logo.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .update-project-form {
+    padding: 1.5rem;
+  }
+
+  .skill-logo {
+    width: 40px;
+    height: 40px;
+  }
+}

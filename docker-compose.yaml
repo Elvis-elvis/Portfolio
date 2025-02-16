@@ -1,0 +1,44 @@
+services:
+  myportfolio2:
+    build: .
+    hostname: myportfolio2
+    ports:
+      - "8080:8080"
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - AUTH0_CLIENT_ID=LPbGLibJn3SrIEap0AKRE0XKH5CE4HNr
+      - AUTH0_CLIENT_SECRET=TEKHWMUjDs04XNtM6LsKI0N5RDtTyhc2jFrwYUUdSQ2hGwBR_jVyyKUx3TQ04SCu
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://doadmin:26X5vR91G08Dkut3@db-mongodb-nyc3-48171-8b2c1b6a.mongo.ondigitalocean.com/admin?retryWrites=true&w=majority
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - mongodb
+
+
+
+
+  mongodb:
+    image: mongo
+    container_name: mongo_db
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+  #      healthcheck:
+  #        test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+  #        retries: 5
+  #        interval: 15s
+  #        start_period: 30s
+
+  mongo-express-myportfolio2:
+    image: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+    ports:
+      - 8085:8081

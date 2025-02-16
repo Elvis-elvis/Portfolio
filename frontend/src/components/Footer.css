@@ -1,0 +1,127 @@
+.footer {
+  background-color: #34495e; /* Dark Blue-gray background */
+  color: #ecf0f1; /* Light text color */
+  padding: 1.2rem 1rem; /* Reduce padding */
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem; /* Reduce gap between sections */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px; /* Reduce min width */
+  padding: 0.5rem; /* Reduce padding */
+}
+
+.footer-section h3 {
+  font-size: 1.5rem; /* Reduce font size */
+  margin-bottom: 0.8rem; /* Reduce spacing */
+  color: #f39c12;
+}
+
+.footer-section p {
+  font-size: 0.9rem; /* Slightly smaller text */
+  line-height: 1.4; /* Reduce line spacing */
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #3c4c5a;
+  padding-top: 0.8rem; /* Reduce padding */
+  margin-top: 1rem; /* Reduce margin */
+  font-size: 0.85rem; /* Slightly smaller text */
+}
+
+/* Buttons */
+.comment-button, .download-button {
+  padding: 0.5rem 1.2rem; /* Reduce button size */
+  font-size: 0.9rem; /* Reduce font size */
+}
+
+.comment-button {
+  background-color: #f39c12;
+  color: #34495e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+}
+
+/* Comment Form */
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 8px; /* Reduce padding */
+  margin-bottom: 10px; /* Reduce spacing */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem; /* Reduce gap */
+}
+
+.socialLinks a {
+  font-size: 1.6rem; /* Reduce icon size */
+  color: #ecf0f1;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #f39c12;
+}
+
+/* Download Button */
+.download-button {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #3498db;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Email Link */
+.email-link {
+  color: #f39c12;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem; /* Reduce font size */
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  color: #e67e22;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections */
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
