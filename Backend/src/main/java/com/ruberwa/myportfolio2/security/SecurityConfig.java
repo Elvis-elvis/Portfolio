@@ -87,6 +87,7 @@ public class SecurityConfig {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.addAllowedOrigin("https://http://localhost:3000/-gxtfe.ondigitalocean.app/");
         corsConfig.addAllowedOrigin("https://dev-3bhgduaasaz1xonw.us.auth0.com/");
+        corsConfig.addAllowedOrigin("https://lionfish-app-rsrfw.ondigitalocean.app/");
         corsConfig.addAllowedHeader("*");
         corsConfig.addAllowedMethod("*");
         corsConfig.setAllowCredentials(true);
