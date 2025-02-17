@@ -97,7 +97,7 @@ public class DataSetupService implements CommandLineRunner {
         Project project1 = buildProject(
                 "projectId1",
                 "Compte Express",
-                "https://private-user-images.githubusercontent.com/142922516/408920082-7ba0fefd-ccf8-4cf3-94a1-2b7572d066e8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk3NjMyNjUsIm5iZiI6MTczOTc2Mjk2NSwicGF0aCI6Ii8xNDI5MjI1MTYvNDA4OTIwMDgyLTdiYTBmZWZkLWNjZjgtNGNmMy05NGExLTJiNzU3MmQwNjZlOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxN1QwMzI5MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZTc3NGIyMWNmNzdkOTdlNDI5Yzg5YzdlNDIwYzQ3Y2M3YjRhN2U1YzU2ZWViZmYwZjQ5OWZjYzI2MzMwZjIxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0Pq9xRObyyq4tTdHMiKgd0O14eyO_7Yx7CbgDuuh32A",
+                "https://i.postimg.cc/3J0cNFRn/compteexpress.png",
                 "https://github.com/Carlos-123321/CompteExpress",
                 List.of(
                         Skill.builder().skillId("skillId1").skillName("Java").skillLogo("https://i.postimg.cc/8CHJ8130/java.png").build(),
@@ -127,7 +127,7 @@ public class DataSetupService implements CommandLineRunner {
         Project project3 = buildProject(
                 "projectId3",
                 "Interactive Dashboard for Civision Company",
-                "https://intl.finebi.com/en-US/blog/interactive-dashboard",
+                "https://i.postimg.cc/nzHvbps6/civision.png",
                 "https://github.com/Elvis-elvis/interactive-dashboard",
                 List.of(
                         Skill.builder().skillId("skillId1").skillName("Java").skillLogo("https://i.postimg.cc/8CHJ8130/java.png").build(),
