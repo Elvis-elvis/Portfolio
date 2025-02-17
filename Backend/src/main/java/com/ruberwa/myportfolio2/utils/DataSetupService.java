@@ -169,8 +169,8 @@ public class DataSetupService implements CommandLineRunner {
     }
 
     private void setupUsers() {
-        User2 user3 = buildUser("elvis", "jshn@hotmail.com", "Elvis", "Ruberwa", List.of("Elvis"), null);
-        User2 user5 = buildUser("user", "samantha@example.com", "Samantha", "Lee", List.of("User"), List.of("read"));
+        User2 user3 = buildUser("elvis", "elvis@gmail.com", "Elvis", "Ruberwa", List.of("Elvis"), null);
+        User2 user5 = buildUser("user", "user@gmail.com", "User", "Testing", List.of("User"), List.of("read"));
         Flux.just( user3, user5)
                 .flatMap(user -> {
                     System.out.println("Checking if user exists: " + user.getUserId());

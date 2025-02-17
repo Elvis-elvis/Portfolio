@@ -36,13 +36,14 @@ public class CommentServiceImpl implements CommentService {
     public Mono<CommentResponseModel> addComment(Mono<CommentRequestModel> commentRequestModel) {
         return commentRequestModel
                 .map(request -> {
-                    request.setDateSubmitted(LocalDateTime.now()); // Set the submission date
-                    return EntityDTOUtil.toCommentEntity(request); // Convert request to entity
+                    request.setDateSubmitted(LocalDateTime.now());
+                    request.setApproved(false); // Ensure new comments are unapproved
+                    return EntityDTOUtil.toCommentEntity(request);
                 })
-                .flatMap(commentRepository::insert) // Save the comment in the repository
-                .flatMap(savedComment -> commentRepository.findById(savedComment.getId())) // Fetch the saved comment
-                .map(EntityDTOUtil::toCommentResponseModel); // Map the entity to a response model
+                .flatMap(commentRepository::insert)
+                .map(EntityDTOUtil::toCommentResponseModel);
     }
+
 
     @Override
     public Flux<CommentResponseModel> getApprovedComments() {
@@ -70,10 +71,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Mono<Void> deleteReview(String reviewId) {
-        return commentRepository.findByCommentId(reviewId)
-                .switchIfEmpty(Mono.error(new NotFoundException("Re with ID '" + reviewId + "' not found.")))
+    public Mono<Void> deleteReview(String commentId) {
+        return commentRepository.findByCommentId(commentId)
+                .switchIfEmpty(Mono.error(new NotFoundException("Comment with ID '" + commentId + "' not found.")))
                 .flatMap(commentRepository::delete);
     }
+
 
 }
