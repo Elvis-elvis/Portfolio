@@ -74,9 +74,7 @@ const Navbar: React.FC = (): JSX.Element => {
 
   return (
       <nav className="navbar">
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </div>
+
 
         <ul className={`navbarList ${menuOpen ? "active" : ""}`}>
           <li onClick={() => scrollToSection('home')} className="navbarItem">
