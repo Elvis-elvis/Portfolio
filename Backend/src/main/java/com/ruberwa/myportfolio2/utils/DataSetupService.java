@@ -104,7 +104,7 @@ public class DataSetupService implements CommandLineRunner {
                         Skill.builder().skillId("skillId2").skillName("Spring Boot").skillLogo("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg").build(),
                         Skill.builder().skillId("skillId3").skillName("React").skillLogo("https://i.postimg.cc/B67j6mJ5/atom.png").build(),
                         Skill.builder().skillId("skillId4").skillName("TypeScript").skillLogo("https://i.postimg.cc/SKDsTgY0/typescript.png").build(),
-                        Skill.builder().skillId("skillId5").skillName("MongoDb").skillLogo("https://i.postimg.cc/HWKJ1vZd/database.png").build(),
+                        Skill.builder().skillId("skillId5").skillName("MariaDb").skillLogo("https://i.postimg.cc/5tkFGLVF/mariadb.png").build(),
                         Skill.builder().skillId("skillId6").skillName("Git").skillLogo("https://i.postimg.cc/B6n84rfQ/git.png").build()
                 )
         );
@@ -130,11 +130,9 @@ public class DataSetupService implements CommandLineRunner {
                 "https://i.postimg.cc/nzHvbps6/civision.png",
                 "https://github.com/Elvis-elvis/interactive-dashboard",
                 List.of(
-                        Skill.builder().skillId("skillId1").skillName("Java").skillLogo("https://i.postimg.cc/8CHJ8130/java.png").build(),
-                        Skill.builder().skillId("skillId2").skillName("Spring Boot").skillLogo("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg").build(),
-                        Skill.builder().skillId("skillId3").skillName("React").skillLogo("https://i.postimg.cc/B67j6mJ5/atom.png").build(),
-                        Skill.builder().skillId("skillId4").skillName("Javascript").skillLogo("https://i.postimg.cc/4xvntfJx/js.png").build(),
-                        Skill.builder().skillId("skillId5").skillName("MySQL").skillLogo("https://i.postimg.cc/qvNPBnff/mysql.png").build()
+                        Skill.builder().skillId("skillId1").skillName("Typescript").skillLogo("https://i.postimg.cc/SKDsTgY0/typescript.png").build(),
+                        Skill.builder().skillId("skillId2").skillName("CSS").skillLogo("https://i.postimg.cc/Jh7bSRHS/css.png").build(),
+                        Skill.builder().skillId("skillId3").skillName("Javascript").skillLogo("https://i.postimg.cc/76d0C7ty/js.png").build()
                 )
         );
 
