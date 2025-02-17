@@ -150,7 +150,7 @@ const Welcome: React.FC = (): JSX.Element => {
           </div>
 
           <div id="projects">
-            <h2>{t('My Projects')}</h2>
+            <h2>{t('welcomePage.projects')}</h2>
             <ProjectList/>
           </div>
 
