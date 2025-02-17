@@ -52,4 +52,11 @@ public class ProjectServiceImpl implements ProjectService {
         return projectRepository.findByProjectId(projectId).map(EntityDTOUtil::toProjectResponseModel);
     }
 
+    @Override
+    public Mono<Void> deleteProject(String projectId) {
+        return projectRepository.findByProjectId(projectId)
+                .switchIfEmpty(Mono.error(new NotFoundException("Re with ID '" + projectId + "' not found.")))
+                .flatMap(projectRepository::delete);
+    }
+
 }

@@ -1,5 +1,8 @@
 package com.ruberwa.myportfolio2.Project;
 
+import com.ruberwa.myportfolio2.utils.NotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -36,6 +39,13 @@ public class ProjectController {
     @GetMapping("/{projectId}")
     Mono<ProjectResponseModel> getProjectById(@PathVariable String projectId) {
         return projectService.GetProject(projectId);
+    }
+
+    @DeleteMapping("/{projectId}")
+    public Mono<ResponseEntity<Void>> deleteProject(@PathVariable String projectId) {
+        return projectService.deleteProject(projectId)
+                .then(Mono.just(new ResponseEntity<Void>(HttpStatus.NO_CONTENT)))
+                .onErrorResume(NotFoundException.class, e -> Mono.just(new ResponseEntity<Void>(HttpStatus.NOT_FOUND)));
     }
 }
 
