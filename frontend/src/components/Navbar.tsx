@@ -82,58 +82,58 @@ const Navbar: React.FC = (): JSX.Element => {
           <li className="navbarItem">
             <Link to="/" onClick={() => setMenuOpen(false)}>{t("navbar.home")}</Link>
           </li>
-            <li onClick={() => scrollToSection('home')} className="navbarItem">
-              <Link to="/">Home</Link>
-            </li>
-            <li onClick={() => scrollToSection('bio')} className="navbarItem">
-              <Link to="/">BIO</Link>
-            </li>
-            <li onClick={() => scrollToSection('skills-section')} className="navbarItem">
-              <Link to="/">Skills</Link>
-            </li>
-            <li onClick={() => scrollToSection('projects')} className="navbarItem">
-              <Link to="/">Projects</Link>
-            </li>
-            <li className="navbarItem">
-              <Link to="/comments">Comments</Link>
-            </li>
-            {/* Social Media Links */}
-            <li className="navbarItem">
-              <a href="https://www.linkedin.com/in/elvis-ruberwa-a2b7b4328/" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li className="navbarItem">
-              <a href="https://github.com/Elvis-elvis" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github"></i>
-              </a>
-            </li>
+          <li onClick={() => scrollToSection('home')} className="navbarItem">
+            <Link to="/">{t("navbar.home")}</Link>
+          </li>
+          <li onClick={() => scrollToSection('bio')} className="navbarItem">
+            <Link to="/">{t("navbar.bio")}</Link>
+          </li>
+          <li onClick={() => scrollToSection('skills-section')} className="navbarItem">
+            <Link to="/">{t("navbar.skills")}</Link>
+          </li>
+          <li onClick={() => scrollToSection('projects')} className="navbarItem">
+            <Link to="/">{t("navbar.projects")}</Link>
+          </li>
+          <li className="navbarItem">
+            <Link to="/comments">{t("navbar.comments")}</Link>
+          </li>
+          {/* Social Media Links */}
+          <li className="navbarItem">
+            <a href="https://www.linkedin.com/in/elvis-ruberwa-a2b7b4328/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li className="navbarItem">
+            <a href="https://github.com/Elvis-elvis" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>
+            </a>
+          </li>
 
-            {isAuthenticated && isElvis && (
-                <li className="navbarItem">
-                  <Link to="/Admin" onClick={() => setMenuOpen(false)}>{t("navbar.adminDashboard")}</Link>
-                </li>
-            )}
+          {isAuthenticated && isElvis && (
+              <li className="navbarItem">
+                <Link to="/Admin" onClick={() => setMenuOpen(false)}>{t("navbar.adminDashboard")}</Link>
+              </li>
+          )}
 
-            {!isAuthenticated ? (
-                <button className={`loginButton ${loading ? "loading" : ""}`} onClick={handleLoginRedirect}
-                        disabled={loading}>
-                  {loading ? t("navbar.redirecting") : t("navbar.login")}
-                </button>
-            ) : (
-                <button className="loginButton" onClick={handleLogout}>
-                  {t("navbar.logout")}
-                </button>
-            )}
+          {!isAuthenticated ? (
+              <button className={`loginButton ${loading ? "loading" : ""}`} onClick={handleLoginRedirect}
+                      disabled={loading}>
+                {loading ? t("navbar.redirecting") : t("navbar.login")}
+              </button>
+          ) : (
+              <button className="loginButton" onClick={handleLogout}>
+                {t("navbar.logout")}
+              </button>
+          )}
 
-            {/* Translation Button */}
-            <button className="translateButton" onClick={toggleLanguage}>
-              {i18n.language.toUpperCase()}
-            </button>
-          </ul>
+          {/* Translation Button */}
+          <button className="translateButton" onClick={toggleLanguage}>
+            {i18n.language.toUpperCase()}
+          </button>
+        </ul>
 
       </nav>
-);
+  );
 };
 
 export default Navbar;
