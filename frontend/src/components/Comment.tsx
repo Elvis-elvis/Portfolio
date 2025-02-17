@@ -79,7 +79,6 @@ const Comment: React.FC = (): JSX.Element => {
         }
     };
 
-
     return (
         <div className="commentsPage">
             <Navbar />

@@ -8,7 +8,6 @@ export const getApprovedComments = async (): Promise<commentResponseModel[]> => 
     return response.data;
 };
 
-
 // Fetch pending comments
 export const getPendingComments = async (): Promise<commentResponseModel[]> => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -27,4 +26,3 @@ export const deleteComment = async (commentId: string): Promise<void> => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
     await axiosInstance.delete(`${backendUrl}/api/comments/${commentId}`);
 };
-
