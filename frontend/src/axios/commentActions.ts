@@ -4,9 +4,10 @@ import { commentResponseModel } from '../model/commentResponseModel';
 // Fetch approved comments
 export const getApprovedComments = async (): Promise<commentResponseModel[]> => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
-    const response = await axiosInstance.get<commentResponseModel[]>(`${backendUrl}/api/comments/approved`);
+    const response = await axiosInstance.get(`${backendUrl}/api/comments/approved`);
     return response.data;
 };
+
 
 // Fetch pending comments
 export const getPendingComments = async (): Promise<commentResponseModel[]> => {
@@ -26,3 +27,4 @@ export const deleteComment = async (commentId: string): Promise<void> => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
     await axiosInstance.delete(`${backendUrl}/api/comments/${commentId}`);
 };
+

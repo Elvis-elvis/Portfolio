@@ -27,7 +27,7 @@ const Comment: React.FC = (): JSX.Element => {
                 const base64Url = accessToken.split('.')[1];
                 const decodedPayload = JSON.parse(atob(base64Url));
                 const roles = decodedPayload['https://portfolio/roles'] || [];
-                setIsElvis(roles.includes('Haitham'));
+                setIsElvis(roles.includes('Elvis'));
             } catch (err) {
                 console.error('Error decoding roles:', err);
             }
