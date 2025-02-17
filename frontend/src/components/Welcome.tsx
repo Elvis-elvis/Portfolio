@@ -32,6 +32,33 @@ import { useTranslation } from 'react-i18next';
 const Welcome: React.FC = (): JSX.Element => {
   const { t } = useTranslation();
 
+  const skillIcons: { [key: string]: string } = {
+    java: javaIcon,
+    python: pythonIcon,
+    csharp: csharpIcon,
+    git: gitIcon,
+    azure: azureIcon,
+    bootstrap: bootstrapIcon,
+    docker: dockerIcon,
+    html: htmlIcon,
+    jira: jiraIcon,
+    javaScript: javaScriptIcon,
+    laravel: LaravelIcon,
+    linux: linuxIcon,
+    mariadb: mariadbIcon,
+    mongodb: mongodbIcon,
+    mysql: mysqlIcon,
+    reactTypescript: reactTypescriptIcon,
+    springBoot: springBootIcon,
+  };
+
+  const languageIcons: { [key: string]: string } = {
+    english: usa,
+    french: french,
+    kinyarwanda: kinyarwanda,
+    spanish: spanish,
+  };
+
 
   const createMatrixColumns = () => {
     const columns = [];
@@ -85,117 +112,40 @@ const Welcome: React.FC = (): JSX.Element => {
           <div className="matrixRain">{matrixColumns}</div>
           <Navbar/>
           <div className="welcomeText">
-            <h1> Hi, I'm Elvis Ruberwa </h1>
-          </div>
+            <h1>{t("welcomePage.greeting")}</h1>
 
-          <div id="bio" className="section">
-            <div className="aboutMeContainer">
-              <div className="photoWrapper">
-                <img src={profilePhoto} alt="Profile" className="profilePhoto"/>
-              </div>
-              <div className="infoWrapper">
-                <p>
-                  I’m a third-year Computer Science student at Champlain College, focused on full stack development, IT,
-                  and cybersecurity. I’m passionate about working in teams, which I’ve integrated through playing
-                  basketball and working in multiple group projects. I’m ambitious about personal growth and have strong
-                  integrity, always ensuring my work is done with care and accountability.
-                </p>
+            <div id="bio" className="section">
+              <div className="aboutMeContainer">
+                <div className="photoWrapper">
+                  <img src={profilePhoto} alt="Profile" className="profilePhoto"/>
+                </div>
+                <div className="infoWrapper">
+                  <p>{t("welcomePage.bioSection.bioDescription")}</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div id="skills-section">
-            <h2>Skills</h2>
-            <div className="skills-container">
-              <div className="skill-item">
-                <img src={javaIcon} alt="Java" className="skill-icon"/>
-                <span className="skill-name">Java</span>
+            <div id="skills-section">
+              <h2>{t('welcomePage.skills.title')}</h2>
+              <div className="skills-container">
+                {Object.keys(skillIcons).map((skill) => (
+                    <div className="skill-item" key={skill}>
+                      <img src={skillIcons[skill]} alt={t(`welcomePage.skills.${skill}`)} className="skill-icon"/>
+                      <span className="skill-name">{t(`welcomePage.skills.${skill}`)}</span>
+                    </div>
+                ))}
               </div>
-              <div className="skill-item">
-                <img src={javaScriptIcon} alt="JavaScript" className="skill-icon"/>
-                <span className="skill-name">JavaScript</span>
-              </div>
-              <div className="skill-item">
-                <img src={pythonIcon} alt="Python" className="skill-icon"/>
-                <span className="skill-name">Python</span>
-              </div>
-              <div className="skill-item">
-                <img src={csharpIcon} alt="C#" className="skill-icon"/>
-                <span className="skill-name">C#</span>
-              </div>
-              <div className="skill-item">
-                <img src={gitIcon} alt="Git" className="skill-icon"/>
-                <span className="skill-name">Git</span>
-              </div>
-              <div className="skill-item">
-                <img src={azureIcon} alt="Azure" className="skill-icon"/>
-                <span className="skill-name">Azure</span>
-              </div>
-              <div className="skill-item">
-                <img src={bootstrapIcon} alt="Bootstap" className="skill-icon"/>
-                <span className="skill-name">Bootstap</span>
-              </div>
-              <div className="skill-item">
-                <img src={dockerIcon} alt="Docker" className="skill-icon"/>
-                <span className="skill-name">Docker</span>
-              </div>
-              <div className="skill-item">
-                <img src={htmlIcon} alt="HTML" className="skill-icon"/>
-                <span className="skill-name">HTML</span>
-              </div>
-              <div className="skill-item">
-                <img src={jiraIcon} alt="Jira" className="skill-icon"/>
-                <span className="skill-name">Jira</span>
-              </div>
-              <div className="skill-item">
-                <img src={LaravelIcon} alt="Laravel" className="skill-icon"/>
-                <span className="skill-name">Laravel</span>
-              </div>
-              <div className="skill-item">
-                <img src={linuxIcon} alt="Linux" className="skill-icon"/>
-                <span className="skill-name">Linux</span>
-              </div>
-              <div className="skill-item">
-                <img src={mariadbIcon} alt="MariaDB" className="skill-icon"/>
-                <span className="skill-name">MariaDB</span>
-              </div>
-              <div className="skill-item">
-                <img src={mongodbIcon} alt="MongoDB" className="skill-icon"/>
-                <span className="skill-name">MongoDB</span>
-              </div>
-              <div className="skill-item">
-                <img src={mysqlIcon} alt="mySQL" className="skill-icon"/>
-                <span className="skill-name">mySQL</span>
-              </div>
-              <div className="skill-item">
-                <img src={reactTypescriptIcon} alt="React/TypeScript" className="skill-icon"/>
-                <span className="skill-name">React/TypeScript</span>
-              </div>
-              <div className="skill-item">
-                <img src={springBootIcon} alt="SpringBoot" className="skill-icon"/>
-                <span className="skill-name">SpringBoot</span>
-              </div>
-
             </div>
 
-            <h2>Languages</h2>
+            <h2>{t('welcomePage.languages.title')}</h2>
             <div className="languages-container">
-              <div className="language-item">
-                <img src={usa} alt="English" className="language-flag"/>
-                <span className="language-name">English</span>
-              </div>
-              <div className="language-item">
-                <img src={french} alt="French" className="language-flag"/>
-                <span className="language-name">French</span>
-              </div>
-              <div className="language-item">
-                <img src={kinyarwanda} alt="Kinyarwanda" className="language-flag"/>
-                <span className="language-name">Kinyarwanda</span>
-              </div>
-              <div className="language-item">
-                <img src={spanish} alt="Spanish" className="language-flag"/>
-                <span className="language-name">Spanish</span>
-              </div>
+              {Object.keys(languageIcons).map((language) => (
+                  <div className="language-item" key={language}>
+                    <img src={languageIcons[language]} alt={t(`welcomePage.languages.${language}`)}
+                         className="language-flag"/>
+                    <span className="language-name">{t(`welcomePage.languages.${language}`)}</span>
+                  </div>
+              ))}
             </div>
           </div>
 

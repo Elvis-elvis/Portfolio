@@ -24,7 +24,8 @@
       "mongodb": "MongoDB",
       "mysql": "MySQL",
       "reactTypescript": "React/TypeScript",
-      "springBoot": "Spring Boot"
+      "springBoot": "Spring Boot",
+      "javaScript": "JavaScript"
     },
     "languages": {
       "title": "Languages",

@@ -79,9 +79,6 @@ const Navbar: React.FC = (): JSX.Element => {
         </div>
 
         <ul className={`navbarList ${menuOpen ? "active" : ""}`}>
-          <li className="navbarItem">
-            <Link to="/" onClick={() => setMenuOpen(false)}>{t("navbar.home")}</Link>
-          </li>
           <li onClick={() => scrollToSection('home')} className="navbarItem">
             <Link to="/">{t("navbar.home")}</Link>
           </li>

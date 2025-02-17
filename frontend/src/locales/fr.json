@@ -12,12 +12,26 @@
         "csharp": "C#",
         "git": "Git",
         "react": "React",
-        "databases": "Bases de données"
+        "databases": "Bases de données",
+        "azure": "Azure",
+        "bootstrap": "Bootstrap",
+        "docker": "Docker",
+        "html": "HTML",
+        "jira": "Jira",
+        "laravel": "Laravel",
+        "linux": "Linux",
+        "mariadb": "MariaDB",
+        "mongodb": "MongoDB",
+        "mysql": "MySQL",
+        "reactTypescript": "React/TypeScript",
+        "springBoot": "Spring Boot",
+        "javaScript": "JavaScript"
       },
       "languages": {
         "title": "Langues",
         "english": "Anglais",
         "french": "Français",
+        "kinyarwanda": "Kinyarwanda",
         "spanish": "Espagnol"
       },
       "projects": "Mes Projets"
