@@ -5,34 +5,22 @@ import './ProjectList.css';
 import { projectResponseModel } from '../model/projectResponseModel';
 import { getAllProjects } from '../axios/getAllProjects';
 import { useTranslation } from 'react-i18next';
-import {deleteProject} from "@/axios/deleteProject";
 
 const ProjectList: React.FC = (): JSX.Element => {
   const [projects, setProjects] = useState<projectResponseModel[]>([]);
-  const [isZako, setIsZako] = useState<boolean>(false); // State to check if the user has the "Zako" role
+  const [isElvis, setIsElvis] = useState<boolean>(false); //
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
   const { t } = useTranslation();  // Using the translation hook
 
-  const handleDeleteProject = async (projectId: string) => {
-    if (window.confirm("Are you sure you want to delete this project?")) {
-      try {
-        await deleteProject(projectId);
-        setProjects((prevProjects) =>
-            prevProjects.filter(p => p.projectId !== parseInt(projectId))
-        );
-      } catch (error) {
-        console.error("Error deleting project:", error);
-      }
-    }
-  };
+
 
   useEffect(() => {
     const fetchUserRoles = async () => {
       const accessToken = localStorage.getItem('access_token');
       if (!accessToken) {
         console.error('No access token found');
-        setIsZako(false);
+        setIsElvis(false);
         return;
       }
 
@@ -41,10 +29,10 @@ const ProjectList: React.FC = (): JSX.Element => {
         const decodedPayload = JSON.parse(atob(base64Url));
         const roles = decodedPayload['https://portfolio/roles'] || []; // Replace with your namespace
 
-        setIsZako(roles.includes('Elvis')); // Check if the user has the "Zako" role
+        setIsElvis(roles.includes('Elvis')); // Check if the user has the "Zako" role
       } catch (err) {
         console.error('Error decoding user roles:', err);
-        setIsZako(false);
+        setIsElvis(false);
       }
     };
 
@@ -83,7 +71,7 @@ const ProjectList: React.FC = (): JSX.Element => {
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        {isZako && (
+        {isElvis && (
             <button className="btn btn-success btn-circle" onClick={handleAddProject}>
               +
             </button>
@@ -134,7 +122,7 @@ const ProjectList: React.FC = (): JSX.Element => {
                   </div>
                 </div>
 
-                {isZako && (
+                {isElvis && (
                     <div className="d-flex justify-content-between mb-2">
                       <button
                           className="btn btn-secondary btn-sm btn-circle"
@@ -142,12 +130,7 @@ const ProjectList: React.FC = (): JSX.Element => {
                       >
                         ✏️
                       </button>
-                      <button
-                          className="btn btn-danger btn-sm btn-circle"
-                          onClick={() => handleDeleteProject(project.projectId.toString())} // Convert to string here
-                      >
-                        ❌
-                      </button>
+
 
                     </div>
                 )}

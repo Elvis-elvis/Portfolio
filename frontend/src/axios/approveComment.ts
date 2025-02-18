@@ -5,3 +5,5 @@ export const approveComment = async (commentId: string): Promise<void> => {
     await axiosInstance.put(`${backendUrl}/api/comments/${commentId}/approve`);
 };
 
+
+
