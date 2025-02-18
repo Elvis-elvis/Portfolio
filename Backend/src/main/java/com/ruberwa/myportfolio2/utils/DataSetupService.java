@@ -73,7 +73,7 @@ public class DataSetupService implements CommandLineRunner {
                 .subscribe();
     }
 
-    
+
 
     private Project buildProject(String projectId, String projectName, String iconUrl, String gitRepo, List<Skill> skills) {
         return Project.builder()
