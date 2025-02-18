@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import { commentRequestModel } from '@/model/commentRequestModel';
-import { addComment } from '../axios/addComment';
+import emailjs from 'emailjs-com';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
@@ -18,17 +17,27 @@ const Footer: React.FC = () => {
       return;
     }
 
-    const newComment: commentRequestModel = { author, content };
+    setIsSubmitting(true);
+
+    const templateParams = {
+      from_name: author,
+      message: content,
+    };
 
     try {
-      setIsSubmitting(true);
-      await addComment(newComment);
+      await emailjs.send(
+          'service_lu7o3kb',  // Your EmailJS Service ID
+          'template_lo4cupb', // Your EmailJS Template ID
+          templateParams,
+          'sDJ_CovLzocYWlIvf' // Your EmailJS Public Key
+      );
+
       setAuthor('');
       setContent('');
       setErrorContent('');
       alert(t('footer.leaveComment.submitSuccess'));
     } catch (error) {
-      console.error('Error submitting comment:', error);
+      console.error('Error sending email:', error);
       setErrorContent(t('footer.leaveComment.submitError'));
     } finally {
       setIsSubmitting(false);
@@ -75,7 +84,7 @@ const Footer: React.FC = () => {
 
             <br /><br />
             <p>
-              <a href="mailto:pj2025@gmail.com" className="email-link">📧 {t('footer.contact.email')}</a>
+              <a href="mailto:elvisjack371@gmail.com" className="email-link">📧 {t('footer.contact.email')}</a>
             </p>
           </div>
 
