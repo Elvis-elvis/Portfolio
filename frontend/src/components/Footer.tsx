@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
