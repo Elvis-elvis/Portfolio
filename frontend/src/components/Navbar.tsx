@@ -65,32 +65,27 @@ const Navbar: React.FC = (): JSX.Element => {
     i18n.changeLanguage(newLanguage);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
       <nav className="navbar">
 
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
 
         <ul className={`navbarList ${menuOpen ? "active" : ""}`}>
-          <li onClick={() => scrollToSection('home')} className="navbarItem">
-            <Link to="/">{t("navbar.home")}</Link>
-          </li>
-          <li onClick={() => scrollToSection('bio')} className="navbarItem">
-            <Link to="/">{t("navbar.bio")}</Link>
-          </li>
-          <li onClick={() => scrollToSection('skills-section')} className="navbarItem">
-            <Link to="/">{t("navbar.skills")}</Link>
-          </li>
-          <li onClick={() => scrollToSection('projects')} className="navbarItem">
-            <Link to="/">{t("navbar.projects")}</Link>
+          <li className="navbarItem">
+            <Link to="/" onClick={() => setMenuOpen(false)}>{t("navbar.home")}</Link>
           </li>
           <li className="navbarItem">
-            <Link to="/comments">{t("navbar.comments")}</Link>
+            <a href="/#skills-section" onClick={() => setMenuOpen(false)}>{t("navbar.skills")}</a>
+          </li>
+          <li className="navbarItem">
+            <a href="/#projects" onClick={() => setMenuOpen(false)}>{t("navbar.projects")}</a>
+          </li>
+          <li className="navbarItem">
+            <Link to="/comments" onClick={() => setMenuOpen(false)}>{t("navbar.comments")}</Link>
           </li>
           {/* Social Media Links */}
           <li className="navbarItem">
