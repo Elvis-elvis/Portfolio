@@ -145,6 +145,7 @@
     justify-content: center;
     gap: 1.5rem; /* Reduced gap between language items */
     padding-bottom: 3%; /* Reduced padding-bottom */
+    z-index: 2;
 }
 
 .language-item {
@@ -152,6 +153,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;  /* 👈 Add this */
+  z-index: 2;
 }
 
 .language-flag {
@@ -170,3 +173,62 @@
 .language-item:hover .language-flag {
     transform: scale(1.1);
 }
+
+.language-item button {
+    z-index: 3;          /* 👈 Add this */
+    position: relative;  /* 👈 Add this */
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+  }
+
+  .language-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;   /* 👈 ADD THIS */
+    z-index: 2;            /* 👈 AND THIS */
+  }
+  
+
+.infoWrapper {
+    position: relative;  /* <<< Make it stackable */
+  z-index: 1;     
+    text-align: center;
+    max-width: 90%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bio-edit-textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    margin-top: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    position: relative;
+  z-index: 2;
+  }
+  
+  .bio-paragraph {
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  button.btn-success {
+    position: relative;
+    z-index: 2;
+  }
+  
+  

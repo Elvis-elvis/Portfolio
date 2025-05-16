@@ -1,5 +1,5 @@
 export interface commentResponseModel {
-    commentId: string;
+    id: string;
     author: string;
     content: string; 
     dateSubmitted: string;

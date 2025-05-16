@@ -15,5 +15,3 @@ export const addProject = async (
       throw new Error(`Failed to review dish: ${error}`);
     }
   };
-
-

@@ -5,15 +5,27 @@ import './ProjectList.css';
 import { projectResponseModel } from '../model/projectResponseModel';
 import { getAllProjects } from '../axios/getAllProjects';
 import { useTranslation } from 'react-i18next';
+import { deleteProject } from '../axios/deleteProject';
 
 const ProjectList: React.FC = (): JSX.Element => {
   const [projects, setProjects] = useState<projectResponseModel[]>([]);
   const [isElvis, setIsElvis] = useState<boolean>(false); //
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
-  const { t } = useTranslation();  // Using the translation hook
+  const { t } = useTranslation();
 
-
+  const handleDeleteProject = async (projectId: string) => {
+    if (window.confirm("Are you sure you want to delete this project?")) {
+      try {
+        await deleteProject(projectId);
+        setProjects((prevProjects) => 
+          prevProjects.filter(p => p.projectId !== parseInt(projectId))
+        );
+      } catch (error) {
+        console.error("Error deleting project:", error);
+      }
+    }
+  };
 
   useEffect(() => {
     const fetchUserRoles = async () => {
@@ -27,9 +39,9 @@ const ProjectList: React.FC = (): JSX.Element => {
       try {
         const base64Url = accessToken.split('.')[1];
         const decodedPayload = JSON.parse(atob(base64Url));
-        const roles = decodedPayload['https://portfolio/roles'] || []; // Replace with your namespace
+        const roles = decodedPayload['https://portfolio/roles'] || [];
 
-        setIsElvis(roles.includes('Elvis')); // Check if the user has the "Zako" role
+        setIsElvis(roles.includes('Elvis'));
       } catch (err) {
         console.error('Error decoding user roles:', err);
         setIsElvis(false);
@@ -123,16 +135,21 @@ const ProjectList: React.FC = (): JSX.Element => {
                 </div>
 
                 {isElvis && (
-                    <div className="d-flex justify-content-between mb-2">
-                      <button
-                          className="btn btn-secondary btn-sm btn-circle"
-                          onClick={() => handleUpdateProject(project.projectId)}
-                      >
-                        ✏️
-                      </button>
-
-
-                    </div>
+                  <div className="d-flex justify-content-between mb-2">
+                  <button
+                    className="btn btn-secondary btn-sm btn-circle"
+                    onClick={() => handleUpdateProject(project.projectId)}
+                  >
+                    ✏️
+                  </button>
+                  <button
+                   className="btn btn-danger btn-sm btn-circle"
+                   onClick={() => handleDeleteProject(project.projectId.toString())} // Convert to string here
+                 >
+                   ❌
+                 </button>
+                 
+                 </div>
                 )}
 
               </div>

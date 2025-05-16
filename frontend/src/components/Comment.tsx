@@ -47,37 +47,48 @@ const Comment: React.FC = (): JSX.Element => {
     }, []);
 
     const handleCommentSubmit = async () => {
-        if (!author || !content) {
-            setErrorContent(t('pleaseFillInFields'));
-            return;
-        }
+  if (!author || !content) {
+    setErrorContent(t('pleaseFillInFields'));
+    return;
+  }
 
-        const newComment: commentRequestModel = { author, content };
+  const newComment: commentRequestModel = { author, content };
 
-        try {
-            setIsSubmitting(true);
-            await addComment(newComment);
-            setAuthor('');
-            setContent('');
-            setErrorContent('');
-            alert(t('commentSubmitted'));
-        } catch (error) {
-            console.error('Error submitting comment:', error);
-            setErrorContent(t('errorSubmittingComment'));
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+  try {
+    setIsSubmitting(true);
+    await addComment(newComment);
+    setAuthor('');
+    setContent('');
+    setErrorContent('');
+    alert(t('commentSubmitted'));
 
-    const handleDelete = async (commentId: string) => {
-        try {
-            await deleteComment(commentId);
-            setComments(comments.filter((c) => c.commentId !== commentId));
-            alert(t('commentDeleted'));
-        } catch (error) {
-            console.error('Error deleting comment:', error);
-        }
-    };
+    // ⚠️ DO NOT update the `comments` state here.
+    // You only want to show approved comments.
+  } catch (error) {
+    console.error('Error submitting comment:', error);
+    setErrorContent(t('errorSubmittingComment'));
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
+const handleDelete = async (id: string) => {
+    if (!id) {
+      console.error('Trying to delete a comment with null ID!');
+      return;
+    }
+  
+    try {
+      await deleteComment(id);
+      setComments(comments.filter(c => c.id !== id));
+      alert(t('commentDeleted'));
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+    }
+  };
+  
+  
 
     return (
         <div className="commentsPage">
@@ -113,29 +124,26 @@ const Comment: React.FC = (): JSX.Element => {
 
 
             <div className="commentsContainer">
-                {comments.length > 0 ? (
-                    comments.map((comment) => (
-                        <div key={comment.commentId} className="comment">
-                            <p>
-                                <strong>{comment.author}:</strong> {comment.content}
-                            </p>
-                            <p className="commentDate">
-                                {t('submittedOn')}: {new Date(comment.dateSubmitted).toLocaleString()}
-                            </p>
+  {comments.length > 0 ? (
+    comments
+      .filter(comment => comment.id) // ✅ Skip null IDs
+      .map(comment => (
+        <div key={comment.id} className="comment">
+          <p><strong>{comment.author}:</strong> {comment.content}</p>
+          <p className="commentDate">{t('submittedOn')}: {new Date(comment.dateSubmitted).toLocaleString()}</p>
 
-                            {isElvis && (
-                                <>
-                                    <button className="deleteBtn" onClick={() => handleDelete(comment.commentId)}>
-                                        ❌
-                                    </button>
-                                </>
-                            )}
-                        </div>
-                    ))
-                ) : (
-                    <p>{t('noCommentsAvailable')}</p>
-                )}
-            </div>
+          {isElvis && (
+            <button className="deleteBtn" onClick={() => handleDelete(comment.id)}>
+              ❌
+            </button>
+          )}
+        </div>
+      ))
+  ) : (
+    <p>{t('noCommentsAvailable')}</p>
+  )}
+</div>
+
         </div>
     );
 };

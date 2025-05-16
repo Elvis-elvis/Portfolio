@@ -1,5 +1,5 @@
 import axiosInstance from "../Shared/Api/axiosInstance";
-import {skillResponseModel} from "@/model/projectResponseModel";
+import {skillResponseModel} from "../model/projectResponseModel";
 
 
 export const getAllSkills = async (): Promise<skillResponseModel[]> => {

@@ -1,0 +1,20 @@
+.bio-paragraph {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-line;
+  }
+  
+  .bio-edit-textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+  }
+  

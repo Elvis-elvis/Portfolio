@@ -38,20 +38,21 @@ const AdminDashboard: React.FC = (): JSX.Element => {
     fetchComments();
   }, []);
 
-  const handleApprove = async (commentId: string) => {
+  const handleApprove = async (id: string) => {
     try {
-      await approveComment(commentId);
-      setComments(comments.map(c => (c.commentId === commentId ? { ...c, approved: true } : c)));
+      await approveComment(id);
+      setComments(comments.map(c => (c.id === id ? { ...c, approved: true } : c)));
       alert(t('commentApproved'));
+      window.location.reload(); // optional: for live refresh
     } catch (error) {
       console.error('Error approving comment:', error);
     }
   };
 
-  const handleDelete = async (commentId: string) => {
+  const handleDelete = async (id: string) => {
     try {
-      await deleteComment(commentId);
-      setComments(comments.filter(c => c.commentId !== commentId));
+      await deleteComment(id);
+      setComments(comments.filter(c => c.id !== id));
       alert(t('commentDeleted'));
     } catch (error) {
       console.error('Error deleting comment:', error);
@@ -63,7 +64,7 @@ const AdminDashboard: React.FC = (): JSX.Element => {
   return (
     <div className="adminDashboard">
       <Navbar />
-      <div className='commentsText'>
+      <div className="commentsText">
         <h1>{t('adminDashboard')}</h1>
       </div>
       <div className="commentsContainer">
@@ -71,17 +72,13 @@ const AdminDashboard: React.FC = (): JSX.Element => {
           <p>{t('noPendingComments')}</p>
         ) : (
           comments.map((comment) => (
-            <div key={comment.commentId} className="comment">
+            <div key={comment.id} className="comment">
               <p>
                 <strong>{comment.author}:</strong> {comment.content}
               </p>
               <p className="commentDate">{t('submittedOn')}: {new Date(comment.dateSubmitted).toLocaleString()}</p>
-              <button className="approveBtn" onClick={() => handleApprove(comment.commentId)}>
-                ✔ 
-              </button>
-              <button className="deleteBtn" onClick={() => handleDelete(comment.commentId)}>
-                ❌ 
-              </button>
+              <button className="approveBtn" onClick={() => handleApprove(comment.id)}>✔</button>
+              <button className="deleteBtn" onClick={() => handleDelete(comment.id)}>❌</button>
             </div>
           ))
         )}

@@ -14,6 +14,23 @@
     margin-left: auto;
     margin-right: auto;
 }
+.btn-danger {
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  .btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: white;
+}
 
 .project-card:hover {
     transform: scale(1.05); /* Subtle zoom effect */
