@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import java.util.List;
 
 @AllArgsConstructor
@@ -14,6 +13,7 @@ import java.util.List;
 @Builder
 @Data
 public class ProjectResponseModel {
+    private String projectId;
     private String projectName;
     private String iconUrl;
     private String gitRepo;

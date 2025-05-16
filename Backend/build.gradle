@@ -23,7 +23,7 @@ jacoco {
 }
 ext {
     mapstructVersion = "1.5.3.Final"
-    lombokVersion = "1.18.26"
+    lombokVersion = "1.18.30"
     lombokMapstructBindingVersion = "0.2.0"
 }
 

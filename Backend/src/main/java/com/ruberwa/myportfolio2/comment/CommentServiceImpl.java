@@ -35,11 +35,13 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Mono<CommentResponseModel> addComment(Mono<CommentRequestModel> commentRequestModel) {
         return commentRequestModel
-                .map(request -> {
-                    request.setDateSubmitted(LocalDateTime.now());
-                    request.setApproved(false); // Ensure new comments are unapproved
-                    return EntityDTOUtil.toCommentEntity(request);
-                })
+                .map(request -> Comment.builder()
+                        .author(request.getAuthor())
+                        .content(request.getContent())
+                        .dateSubmitted(LocalDateTime.now())
+                        .approved(false)
+                        .build()
+                )
                 .flatMap(commentRepository::insert)
                 .map(EntityDTOUtil::toCommentResponseModel);
     }
@@ -61,8 +63,8 @@ public class CommentServiceImpl implements CommentService {
 
 
     @Override
-    public Mono<CommentResponseModel> approveComment(String commentId) {
-        return commentRepository.findByCommentId(commentId)
+    public Mono<CommentResponseModel> approveComment(String id) {
+        return commentRepository.findById(id)
                 .flatMap(comment -> {
                     comment.setApproved(true);
                     return commentRepository.save(comment);
@@ -71,9 +73,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Mono<Void> deleteReview(String commentId) {
-        return commentRepository.findByCommentId(commentId)
-                .switchIfEmpty(Mono.error(new NotFoundException("Comment with ID '" + commentId + "' not found.")))
+    public Mono<Void> deleteReview(String id) {
+        return commentRepository.findById(id)
+                .switchIfEmpty(Mono.error(new NotFoundException("Comment with ID '" + id + "' not found.")))
                 .flatMap(commentRepository::delete);
     }
 

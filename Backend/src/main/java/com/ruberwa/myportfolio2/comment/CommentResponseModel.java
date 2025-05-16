@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class CommentResponseModel {
-    private String commentId;
+    private String id;
     private String author;
     private String content;
     private LocalDateTime dateSubmitted;

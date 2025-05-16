@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 public class Comment {
     @Id
     private String id;
-    private String commentId;
     private String author;
     private String content;
     private LocalDateTime dateSubmitted;

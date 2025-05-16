@@ -43,12 +43,14 @@ public class EntityDTOUtil {
 
     public static CommentResponseModel toCommentResponseModel(Comment comment) {
         return CommentResponseModel.builder()
-                .commentId(comment.getCommentId())
+                .id(comment.getId())
                 .author(comment.getAuthor())
                 .content(comment.getContent())
                 .dateSubmitted(comment.getDateSubmitted())
+                .approved(comment.isApproved())
                 .build();
     }
+
 
     public static Skill toSkillEntity(SkillRequestModel request) {
         return Skill.builder()
@@ -73,6 +75,7 @@ public class EntityDTOUtil {
 
     public static Project toProjectEntity(ProjectRequestModel request) {
         return Project.builder()
+                .projectId(generateOrderIdString())
                 .projectName(request.getProjectName())
                 .iconUrl(request.getIconUrl())
                 .gitRepo(request.getGitRepo())
